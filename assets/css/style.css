@@ -1,8 +1,11 @@
 body {
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/galaxy.jpeg");
    background-size: 100%;
    background-attachment: fixed;
+   color: white;
+
 }
 .jumbotron {
     height: 500px;
+    background:  rgba(204, 204, 204, 0.5);
 }

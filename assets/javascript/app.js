@@ -11,20 +11,35 @@ var intervalId;
 // Question object array
 var questions = [
     {
-        q: 'What color is the sky? ',
-        choices: ['Blue', 'Red ', 'Orange', 'Green'],
-        answer: 'Blue',
+        q: 'What is the first organism to grow back after a fire? ',
+        choices: ['Moss', 'Trees ', 'Grass', 'Posion Oak'],
+        answer: 'Moss',
     },
     {
-        q: 'What color is George Washingtons white horse? ',
-        choices: ['White', 'Red', 'Orange', 'Green'],
-        answer: 'White',
+        q: 'What was the first planet to be discovered with the telescope? ',
+        choices: ['Mars', 'Jupiter', 'Earth', 'Uranus'],
+        answer: 'Uranus',
+    },
+    {
+        q: 'How many colors are there in a rainbow? ',
+        choices: ['4', '8', '6', '7'],
+        answer: '7',
+    },
+    {
+        q: 'An animal that lives part of its life in water and part part on land is known as what? ',
+        choices: ['Terrestrial', 'Amphibian', 'Nocturnal', 'Diurnal'],
+        answer: 'Uranus',
+    },
+    {
+        q: 'Diamonds are made up almost entirely of what element? ',
+        choices: ['Carbon', 'Nitrogen', 'Graphite', 'Amorphous'],
+        answer: 'Carbon',
     }
 ]
 
 // Start function
 function init() {
-    var $start = $("<button class='btn btn-secondary'>Start</button>");
+    var $start = $("<button class='btn bg-transparent text-white rounded-0'>Start</button>");
     $app.empty();
     $start.on("click", showQuestion)
     $app.append($start);
@@ -118,44 +133,3 @@ function endGame(){
     $restart.on("click", init);
     $app.append($restart);
 }
-
-
-
-
-
-
-
-// var correctAnswers = 0;
-// var wrongAnswers = 0;
-// var timedOutAnswers = 0;
-// var timer = 15;
-// var qIndex;
-// var questionsCount = questions.length;
-// var isRunning = false;
-// var intervalId;
-
-
-// $("#buttonRestart").hide();
-// $("#buttonStart").on("click", function () {
-//     $("#trivia").hide();
-//     $("#buttonStart").hide();
-//     runTimer();
-
-// });
-// function runTimer() {
-//     if (!isRunning) {
-//         intervalId = setInterval(decrement, 1000);
-//         isRunning = true;
-//     }
-// };
-// function decrement() {
-//     $("#timerBox").html("<h4> Time Remaining: " + timer + "</h4>");
-//     timer--;
-//     if (timer === 0) {
-//         stopTimer();
-//     }
-// }
-// function stopTimer() {
-//     isRunning = false;
-//     clearInterval(intervalId);
-// }
