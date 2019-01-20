@@ -64,7 +64,7 @@ function displayAnswer(userInput) {
     $app.append("<h2>Answer</h2>");
     $app.append("<h3>Correct answer is: " + question.answer + "</h3>");
     $app.append("<h3>You selected: " + userInput + "</h3>");
-    console.log(question.answer);
+
     if (userInput === undefined) {
         $app.append("<h3>You ran out of time!</h3>");
         incorrect++;
@@ -83,9 +83,9 @@ function displayAnswer(userInput) {
 
     questionIndex++;
     if (questionIndex < questions.length) {
-        setTimeout(showQuestion, 5000);
+        setTimeout(showQuestion, 3000);
     } else {
-        setTimeout(endGame, 5000);
+        setTimeout(endGame, 3000);
     }
 }
 
@@ -114,7 +114,9 @@ function endGame(){
     $app.empty();
     $app.append("<h2>Your correct answer total is: " + correct + "</h2>");
     $app.append("<h2>Your incorrect answer total is: " +incorrect+"</h2>");
-    
+    var $restart = $("<button class='btn-secondary'>Play again?</button>");
+    $restart.on("click", init);
+    $app.append($restart);
 }
 
 
