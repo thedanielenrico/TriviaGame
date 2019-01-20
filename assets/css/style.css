@@ -3,3 +3,6 @@ body {
    background-size: 100%;
    background-attachment: fixed;
 }
+.jumbotron {
+    height: 500px;
+}
