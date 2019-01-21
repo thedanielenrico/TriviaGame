@@ -14,26 +14,37 @@ var questions = [
         q: 'What is the first organism to grow back after a fire? ',
         choices: ['Moss', 'Trees ', 'Grass', 'Posion Oak'],
         answer: 'Moss',
+        url: '../TriviaGame/assets/images/moss.jpg',
     },
     {
         q: 'What was the first planet to be discovered with the telescope? ',
         choices: ['Mars', 'Jupiter', 'Earth', 'Uranus'],
         answer: 'Uranus',
+        url: '../TriviaGame/assets/images/uranus.jpg',
     },
     {
         q: 'How many colors are there in a rainbow? ',
         choices: ['4', '8', '6', '7'],
         answer: '7',
+        url: '../TriviaGame/assets/images/rainbow.jpg',
     },
     {
-        q: 'An animal that lives part of its life in water and part part on land is known as what? ',
+        q: 'An animal that lives part of its life in water and part on land is known as what? ',
         choices: ['Terrestrial', 'Amphibian', 'Nocturnal', 'Diurnal'],
         answer: 'Amphibian',
+        url: '../TriviaGame/assets/images/amphibians.jpg',
     },
     {
         q: 'Diamonds are made up almost entirely of what element? ',
         choices: ['Carbon', 'Nitrogen', 'Graphite', 'Amorphous'],
         answer: 'Carbon',
+        url: '../TriviaGame/assets/images/diamond.jpg',
+    },
+    {
+        q: 'Who wrote the theory of relativity? ',
+        choices: ['Newton', 'Darwin', 'Michelangelo', 'Einstein'],
+        answer: 'Einstein',
+        url: '../TriviaGame/assets/images/einstein.jpg',
     }
 ]
 
@@ -81,18 +92,18 @@ function displayAnswer(userInput) {
     // $app.append("<h2>Answer</h2>");
     $app.append("<h3>Correct answer is: " + question.answer + "</h3>");
     $app.append("<h3>You selected: " + userInput + "</h3>");
-
+    $app.prepend("<img src='"+question.url+"' style='width: 200px;'></img>");
 
     if (userInput === undefined) {
-        $app.append("<h3>You ran out of time!</h3>");
+        $app.prepend("<h3>You ran out of time!</h3>");
         incorrect++;
         stopTimer();
     } else if (userInput === question.answer) {
-        $app.append("<h3>You win!</h3>");
+        $app.prepend("<h3>Correct!</h3>");
         correct++;
         stopTimer();
     } else {
-        $app.append("<h3>You lose!</h3>");
+        $app.prepend("<h3>Wrong!</h3>");
         incorrect++;
         stopTimer();
     }
@@ -100,9 +111,9 @@ function displayAnswer(userInput) {
 
     questionIndex++;
     if (questionIndex < questions.length) {
-        setTimeout(showQuestion, 3000);
+        setTimeout(showQuestion, 5000);
     } else {
-        setTimeout(endGame, 3000);
+        setTimeout(endGame, 5000);
     }
 }
 
@@ -116,7 +127,7 @@ function runTimer() {
     if (!isRunning) {
         intervalId = setInterval(decrement, 1000);
         isRunning = true;
-        timer = 5;
+        timer = 10;
     }
 };
 function decrement() {
